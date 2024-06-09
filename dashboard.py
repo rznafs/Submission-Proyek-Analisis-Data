@@ -33,8 +33,8 @@ st.header("Most & Least Purchased Product")
 
 fig_product, ax = plt.subplots(nrows=1, ncols=2, figsize=(40, 10))
 
-colors1 = [#95E588, #95E588, #95E588, #95E588, #95E588]
-colors2 = [#E58888, #E58888, #E58888, #E58888, #E58888]
+colors1 = ["#95E588", "#95E588", "#95E588", "#95E588", "#95E588"]
+colors2 = ["#E58888", "#E58888", "#E58888", "#E58888", "#E58888"]
 
 sum_order_items = all_data.groupby("product_category_name_english").product_id.count().sort_values(ascending=False).reset_index()
 sum_order_items.rename(columns={"product_id": "products"},inplace=True)
