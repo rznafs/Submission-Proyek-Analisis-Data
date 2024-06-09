@@ -33,7 +33,8 @@ st.header("Most & Least Purchased Product")
 
 fig_product, ax = plt.subplots(nrows=1, ncols=2, figsize=(40, 10))
 
-colors = ["#90CAF9", "#D3D3D3", "#D3D3D3", "#D3D3D3", "#D3D3D3"]
+colors1 = [#95E588, #95E588, #95E588, #95E588, #95E588]
+colors2 = [#E58888, #E58888, #E58888, #E58888, #E58888]
 
 sum_order_items = all_data.groupby("product_category_name_english").product_id.count().sort_values(ascending=False).reset_index()
 sum_order_items.rename(columns={"product_id": "products"},inplace=True)
@@ -43,7 +44,7 @@ sn.barplot(
     x = "products",
     y = "product_category_name_english",
     data = sum_order_items.head(5),
-    palette = colors,
+    palette = colors1,
     ax = ax[0]
 )
 ax[0].set_ylabel(None)
@@ -56,7 +57,7 @@ sn.barplot(
     x = "products",
     y = "product_category_name_english", 
     data = sum_order_items.sort_values(by="products", ascending=True).head(5),
-    palette = colors,
+    palette = colors2,
     ax = ax[1]
 )
 ax[1].set_ylabel(None)
