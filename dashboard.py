@@ -81,7 +81,8 @@ payment_type_counts.rename(columns={"customer_id": "customers"}, inplace=True)
 payment_type_counts.head()
 
 fig_payment = plt.figure(figsize=(10, 5))
- 
+
+colors = ["#95E588", "#D3D3D3", "#D3D3D3", "#D3D3D3", "#D3D3D3"] 
 sn.barplot(
     y = "customers", 
     x = "payment_type",
@@ -110,7 +111,7 @@ sn.barplot(
     y = "review_counts", 
     x = "review_score",
     data = review_scores,
-    palette = ["#D3D3D3", "#D3D3D3", "#D3D3D3", "#D3D3D3","#90CAF9"]
+    palette = ["#D3D3D3", "#D3D3D3", "#D3D3D3", "#D3D3D3","#95E588"]
 )
 plt.ylabel(None)
 plt.xlabel("Rating")
